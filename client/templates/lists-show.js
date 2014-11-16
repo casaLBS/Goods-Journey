@@ -62,10 +62,10 @@ var saveList = function(list, template) {
 var deleteList = function(list) {
   // ensure the last public list cannot be deleted.
   if (! list.userId && Lists.find({userId: {$exists: false}}).count() === 1) {
-    return alert("Sorry, you cannot delete the final public list!");
+    return alert("这是最后一个账户了, 别删了吧, -_- /``` ");
   }
   
-  var message = "Are you sure you want to delete the list " + list.name + "?";
+  var message = "确认删除这个账户吗?" + list.name + "?";
   if (confirm(message)) {
     // we must remove each item individually from the client
     Todos.find({listId: list._id}).forEach(function(todo) {

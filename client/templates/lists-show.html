@@ -18,13 +18,13 @@
         <div class="nav-group right">
           <div class="nav-item options-mobile">
             <select class="list-edit">
-              <option disabled selected>Select an action</option>
+              <option disabled selected>选择操作</option>
               {{#if userId}}
-                <option value="public">Make Public</option>
+                <option value="public">设置公开</option>
               {{else}}
-                <option value="private">Make Private</option>
+                <option value="private">设置私有</option>
               {{/if}}
-              <option value="delete">Delete</option>
+              <option value="delete">删除</option>
             </select>
             <span class="icon-cog"></span>
           </div>
@@ -60,14 +60,14 @@
             {{> todosItem}}
           {{else}}
             <div class="wrapper-message">
-              <div class="title-message">No tasks here</div>
-              <div class="subtitle-message">Add new tasks using the field above</div>
+              <div class="title-message">没有找到账单</div>
+              <div class="subtitle-message">请先关联支付宝账户</div>
             </div>
           {{/each}}
         {{/with}}
       {{else}}
           <div class="wrapper-message">
-            <div class="title-message">Loading tasks...</div>
+            <div class="title-message">正在加载账单...</div>
           </div>
       {{/if}}
     </div>

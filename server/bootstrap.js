@@ -18,7 +18,11 @@ Meteor.startup(function () {
          "给媳妇转账",
          "咸阳乘客的车费"
          ]
-      }
+      },
+        {
+            name: "没有账单的账户",
+            items: []
+        }
     ];
 
     var timestamp = (new Date()).getTime();

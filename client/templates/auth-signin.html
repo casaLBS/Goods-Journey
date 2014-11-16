@@ -8,8 +8,8 @@
 
     <div class="content-scrollable">
       <div class="wrapper-auth">
-        <h1 class="title-auth">Sign In.</h1>
-        <p class="subtitle-auth" >Signing in allows you to view private lists</p>
+        <h1 class="title-auth">登录.</h1>
+        <p class="subtitle-auth" >登录后可以查看和管理支付宝账户</p>
 
         <form>
           {{#if errorMessages}}
@@ -21,20 +21,20 @@
           {{/if}}
 
           <div class="input-symbol {{errorClass 'email'}}">
-            <input type="email" name="email" placeholder="Your Email" />
+            <input type="email" name="email" placeholder="邮箱地址" />
             <span class="icon-email" title="Your Email"></span>
           </div>
 
           <div class="input-symbol {{errorClass 'password'}}">
-            <input type="password" name="password" placeholder="Password" />
+            <input type="password" name="password" placeholder="密码" />
             <span class="icon-lock" title="Password"></span>
           </div>
 
-          <button type="submit" class="btn-primary">Sign in</button>
+          <button type="submit" class="btn-primary">登录</button>
         </form>
       </div>
 
-      <a href="{{pathFor 'join'}}" class="link-auth-alt">Need an account? Join Now.</a>
+      <a href="{{pathFor 'join'}}" class="link-auth-alt">没有账户? 现在注册.</a>
     </div>
   </div>
 </template>
