@@ -1,0 +1,64 @@
+<template name="appBody">
+  <div id="container" class="{{menuOpen}} {{cordova}}">
+
+    <section id="menu">
+      {{#if currentUser}}
+        <div class="btns-group-vertical">
+          <a href="#" class="js-user-menu btn-secondary">
+            {{#if userMenuOpen}}
+              <span class="icon-arrow-up"></span>
+              {{else}}
+              <span class="icon-arrow-down"></span>
+            {{/if}}
+            {{emailLocalPart}}
+          </a>
+          {{#if userMenuOpen}}
+            <a class="js-logout btn-secondary">Logout</a>
+          {{/if}}
+        </div>
+      {{else}}
+        <div class="btns-group">
+          <a href="{{pathFor 'signin'}}" class="btn-secondary">登陆</a>
+          <a href="{{pathFor 'join'}}" class="btn-secondary">注册</a>
+        </div>
+      {{/if}}
+
+      <div class="list-todos">
+        <a class="js-new-list link-list-new"><span class="icon-plus"></span>添加新账户</a>
+
+        {{#each lists}}
+          <a href="{{pathFor 'listsShow'}}" class="list-todo {{activeListClass}}" title="{{name}}">
+            {{#if userId}}
+              <span class="icon-lock"></span>
+            {{/if}}
+            {{#if incompleteCount}}
+              <span class="count-list">{{incompleteCount}}</span>
+            {{/if}}
+            {{name}}
+          </a>
+        {{/each}}
+
+      </div>
+    </section>
+
+    {{#unless connected}}
+      <div class="notifications">
+        <div class="notification">
+          <span class="icon-sync"></span>
+          <div class="meta">
+            <div class="title-notification">重新连接中</div>
+            <div class="description">芦康平不会携款潜逃了吧 ! ?</div>
+          </div>
+        </div>
+      </div>
+    {{/unless}}
+
+    <div class="content-overlay"></div>
+
+    <div id="content-container">
+      {{#each thisArray}}
+        {{> yield}}
+      {{/each}}
+    </div>
+  </div>
+</template>
